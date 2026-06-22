@@ -8,104 +8,121 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: #0a0a1a;
-            color: #ffffff;
+            background: #f0f4f8;
+            color: #1a1a2e;
             min-height: 100vh;
         }
 
         /* 导航 */
         .navbar {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 16px 24px;
-            background: rgba(10,10,26,0.92); backdrop-filter: blur(12px);
+            padding: 14px 24px;
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
         }
-        .logo { font-size: 18px; font-weight: 700; color: #4fc3f7; }
+        .logo { font-size: 18px; font-weight: 700; color: #0077cc; }
         .nav-links { display: flex; gap: 24px; list-style: none; }
-        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color 0.3s; }
-        .nav-links a:hover { color: #4fc3f7; }
-        .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+        .nav-links a { color: #555; text-decoration: none; font-size: 14px; transition: color 0.3s; font-weight: 500; }
+        .nav-links a:hover { color: #0077cc; }
+        .menu-toggle { display: none; background: none; border: none; color: #333; font-size: 24px; cursor: pointer; }
 
         /* Hero */
         .hero {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             min-height: 100vh; padding: 80px 24px 60px; text-align: center;
-            background: radial-gradient(ellipse at center, #0d1b3e 0%, #0a0a1a 70%);
+            background: linear-gradient(135deg, #e8f4fd 0%, #d0e8f7 40%, #c5dff0 100%);
         }
         .hero-title {
-            font-size: 38px; font-weight: 700; margin-bottom: 12px;
-            background: linear-gradient(135deg, #4fc3f7, #81d4fa, #b3e5fc);
+            font-size: 38px; font-weight: 800; margin-bottom: 12px;
+            background: linear-gradient(135deg, #005fa3, #0077cc, #0099e6);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .hero-subtitle { font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 48px; }
+        .hero-subtitle { font-size: 16px; color: #555; margin-bottom: 48px; }
 
         /* 导航卡片 */
         .nav-cards { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
         .nav-card {
-            background: rgba(255,255,255,0.04); border: 1px solid rgba(79,195,247,0.15);
-            border-radius: 12px; padding: 28px 32px; text-align: center; cursor: pointer;
+            background: rgba(255,255,255,0.85); border: 1px solid rgba(0,119,204,0.15);
+            border-radius: 14px; padding: 28px 32px; text-align: center; cursor: pointer;
             transition: all 0.3s; min-width: 160px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
         }
-        .nav-card:hover { background: rgba(79,195,247,0.1); border-color: rgba(79,195,247,0.4); transform: translateY(-4px); }
+        .nav-card:hover { background: #fff; border-color: rgba(0,119,204,0.4); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,119,204,0.12); }
         .nav-card-icon { font-size: 32px; margin-bottom: 12px; }
-        .nav-card-title { font-size: 15px; font-weight: 600; }
+        .nav-card-title { font-size: 15px; font-weight: 600; color: #333; }
 
         /* 通用区块 */
         .section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
         .section-title {
-            font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 12px; color: #4fc3f7;
+            font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 12px; color: #0066aa;
         }
         .section-desc {
-            text-align: center; color: rgba(255,255,255,0.55); font-size: 15px;
+            text-align: center; color: #666; font-size: 15px;
             margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;
         }
 
         /* 卡片网格 */
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
         .card {
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px; padding: 32px 24px; transition: all 0.3s;
+            background: #fff; border: 1px solid #e0e8f0;
+            border-radius: 14px; padding: 32px 24px; transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
         }
-        .card:hover { border-color: rgba(79,195,247,0.3); background: rgba(79,195,247,0.05); }
-        .card h3 { font-size: 18px; margin-bottom: 6px; color: #81d4fa; }
-        .card .card-tag { font-size: 12px; color: #4fc3f7; margin-bottom: 10px; display: inline-block; background: rgba(79,195,247,0.1); padding: 2px 10px; border-radius: 20px; }
-        .card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+        .card:hover { border-color: rgba(0,119,204,0.3); box-shadow: 0 8px 30px rgba(0,119,204,0.08); transform: translateY(-2px); }
+        .card h3 { font-size: 18px; margin-bottom: 6px; color: #0077cc; }
+        .card .card-tag { font-size: 12px; color: #0077cc; margin-bottom: 10px; display: inline-block; background: #e8f4fd; padding: 2px 10px; border-radius: 20px; font-weight: 600; }
+        .card p { font-size: 14px; color: #666; line-height: 1.8; }
         .card ul { list-style: none; margin-top: 12px; }
-        .card ul li { font-size: 13px; color: rgba(255,255,255,0.45); padding: 4px 0; padding-left: 16px; position: relative; }
-        .card ul li::before { content: "›"; position: absolute; left: 0; color: #4fc3f7; }
+        .card ul li { font-size: 13px; color: #777; padding: 4px 0; padding-left: 16px; position: relative; }
+        .card ul li::before { content: "›"; position: absolute; left: 0; color: #0077cc; font-weight: 700; }
 
-        /* 产品特色横排 */
+        /* 视频网格 */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .video-card {
+            background: #fff; border-radius: 14px; overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: all 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+        .video-card:hover { box-shadow: 0 8px 32px rgba(0,119,204,0.12); transform: translateY(-2px); }
+        .video-card video { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #000; }
+        .video-card-title { padding: 14px 18px; font-size: 15px; font-weight: 600; color: #333; text-align: center; }
+
+        /* 特色横排 */
         .feature-row { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
         .feature-item {
             flex: 1; min-width: 200px; max-width: 220px; text-align: center;
-            padding: 24px 16px; border-radius: 12px;
-            background: rgba(79,195,247,0.04); border: 1px solid rgba(79,195,247,0.1);
+            padding: 24px 16px; border-radius: 14px;
+            background: #fff; border: 1px solid #e0e8f0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
         }
         .feature-item .f-icon { font-size: 28px; margin-bottom: 10px; }
-        .feature-item .f-title { font-size: 14px; font-weight: 600; color: #b3e5fc; margin-bottom: 6px; }
-        .feature-item .f-desc { font-size: 12px; color: rgba(255,255,255,0.45); }
+        .feature-item .f-title { font-size: 14px; font-weight: 600; color: #0066aa; margin-bottom: 6px; }
+        .feature-item .f-desc { font-size: 12px; color: #888; }
 
         /* 行业覆盖 */
         .industry-tags { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
         .industry-tag {
-            padding: 8px 20px; border-radius: 24px; font-size: 14px;
-            background: rgba(79,195,247,0.08); border: 1px solid rgba(79,195,247,0.2);
-            color: rgba(255,255,255,0.7);
+            padding: 10px 22px; border-radius: 24px; font-size: 14px;
+            background: #fff; border: 1px solid #d0dce8;
+            color: #444; font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
         /* 联系 */
         .contact-section {
             text-align: center; padding: 80px 24px;
-            background: linear-gradient(180deg, transparent, rgba(79,195,247,0.03));
+            background: linear-gradient(180deg, #f0f4f8, #e8f0f8);
         }
         .contact-info { display: flex; flex-direction: column; gap: 16px; align-items: center; margin-top: 32px; }
-        .contact-item { font-size: 15px; color: rgba(255,255,255,0.7); }
-        .contact-item span { color: #4fc3f7; }
+        .contact-item { font-size: 15px; color: #555; }
+        .contact-item span { color: #0077cc; font-weight: 600; }
 
         /* 底部 */
         .footer {
             text-align: center; padding: 24px; font-size: 12px;
-            color: rgba(255,255,255,0.3); border-top: 1px solid rgba(255,255,255,0.05);
+            color: #aaa; background: #fff;
+            border-top: 1px solid #e8e8e8;
         }
 
         /* 手机 */
@@ -116,6 +133,7 @@
             .nav-cards { flex-direction: column; align-items: center; }
             .nav-card { width: 100%; max-width: 300px; }
             .card-grid { grid-template-columns: 1fr; }
+            .video-grid { grid-template-columns: 1fr; }
             .feature-row { flex-direction: column; align-items: center; }
         }
     </style>
@@ -168,7 +186,7 @@
     <h2 class="section-title">公司概况</h2>
     <p class="section-desc">
         北京曼索科技有限公司（MSTECH），成立于2019年，位于北京朝阳区中传北广文化传媒基地。<br>
-        专注于为研发企业提供<strong style="color:#4fc3f7">系统工程、数字化协同设计仿真与优化、材料数据智能管理</strong>等专业领域工程咨询及工程实施服务。<br>
+        专注于为研发企业提供<strong style="color:#0077cc">系统工程、数字化协同设计仿真与优化、材料数据智能管理</strong>等专业领域工程咨询及工程实施服务。<br>
         与西门子等国际主要PLM服务提供商深入合作，客户覆盖航空、航天、兵器、船舶、核、汽车、电力、电子等行业。
     </p>
 </section>
@@ -234,11 +252,37 @@
     </div>
 </section>
 
-<!-- 虚拟试验场 -->
+<!-- 虚拟试验场 + 视频 -->
 <section class="section" id="platform">
     <h2 class="section-title">虚拟试验场</h2>
     <p class="section-desc">突破时空和物理条件限制，显著降低物理原型制作、设备损耗、物料消耗和人力成本。沉淀多年专业积累，覆盖多种试验类型，零编码定制场景组合应用。</p>
-    <div class="feature-row">
+    <div class="video-grid">
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="videos/静力试验.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-title">静力试验</div>
+        </div>
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="videos/热环境试验.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-title">热环境试验</div>
+        </div>
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="videos/虚拟飞行试验.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-title">虚拟飞行试验</div>
+        </div>
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="videos/振动台试验.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-title">振动台试验</div>
+        </div>
+    </div>
+    <div class="feature-row" style="margin-top:48px">
         <div class="feature-item">
             <div class="f-icon">🧪</div>
             <div class="f-title">虚拟试验</div>
