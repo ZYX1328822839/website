@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>北京曼索科技有限公司 - 产品及服务简介</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -78,14 +81,21 @@
         .card ul li::before { content: "›"; position: absolute; left: 0; color: #0077cc; font-weight: 700; }
 
         /* 视频网格 */
-        .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 28px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
         .video-card {
             background: #fff; border-radius: 14px; overflow: hidden;
             box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: all 0.3s;
             border: 1px solid #e0e8f0;
+            width: 100%;
         }
         .video-card:hover { box-shadow: 0 8px 32px rgba(0,119,204,0.12); transform: translateY(-2px); }
-        .video-card video { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #000; }
+        .video-card video { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #000; display: block; }
         .video-card-title { padding: 14px 18px; font-size: 15px; font-weight: 600; color: #333; text-align: center; }
 
         /* 特色横排 */
@@ -133,7 +143,7 @@
             .nav-cards { flex-direction: column; align-items: center; }
             .nav-card { width: 100%; max-width: 300px; }
             .card-grid { grid-template-columns: 1fr; }
-            .video-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .video-grid { grid-template-columns: 1fr !important; max-width: 100%; }
             .feature-row { flex-direction: column; align-items: center; }
         }
     </style>
